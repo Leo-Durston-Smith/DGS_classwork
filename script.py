@@ -46,7 +46,7 @@ main = ScoringSystem()
 while main.true:
     main.save_score(input('Enter your name:'),int(input('Enter your score:')))
     file = open('scores.txt','w')
-    file.write("Marc:10000")
+    file.write("")
     file.write(main.shhhhhhhhhhh)
     file.close()
     main.true = False if input('Do you wish to continue? (y/n) ') != 'y' else True
