@@ -28,21 +28,25 @@ class ScoringSystem:
             count += 1
             if score > int(x.split(':')[1]):
                 try:
-                    self.temp = f.readlines().insert(count, x+'\n')
+                    #self.temp = f.readlines().insert(count, x+'\n')
+                    self.temp = f.readlines()
+                    self.temp.insert(count,x+'\n')
                     for i in self.temp:
                         self.shhhhhhhhhhh += f"{name} :"+i
                 except IndexError:
-                    self.temp = f.readlines().append(x + '\n')
+                    #self.temp = f.readlines().append(x + '\n')
+                    self.temp = f.readlines()
+                    self.temp.append(x + '\n')
                     for i in self.temp:
                         self.shhhhhhhhhhh += f"{name} :"+i
-                    print(self.shhhhhhhhhhh)
+        print(self.shhhhhhhhhhh)
         f.close()
 
 main = ScoringSystem()
 while main.true:
     main.save_score(input('Enter your name:'),int(input('Enter your score:')))
     file = open('scores.txt','w')
-    file.write('hi im working :1000')
+    file.write("Marc:10000")
     file.write(main.shhhhhhhhhhh)
     file.close()
     main.true = False if input('Do you wish to continue? (y/n) ') != 'y' else True
