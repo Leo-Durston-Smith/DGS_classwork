@@ -7,7 +7,7 @@ write a game scoring system that saves a players name and score to a file. each 
 class ScoringSystem:
     def __init__(self):
         try:
-            f = open('scores.txt','r')
+            f = open('scores.txt', 'r')
             try:
                 print(f.readlines()[2])
             except IndexError:
@@ -15,14 +15,14 @@ class ScoringSystem:
                     print(x)
             f.close()
         except FileNotFoundError:
-            file = open('scores.txt','w')
+            file = open('scores.txt', 'w')
             file.close()
         self.true = True
         self.shhhhhhhhhhh = ''
         self.temp = []
 
     def save_score(self,name,score):
-        f = open('scores.txt','r')
+        f = open('scores.txt', 'r')
         count = -1
         for x in f.readlines():
             count += 1
@@ -45,7 +45,7 @@ class ScoringSystem:
 main = ScoringSystem()
 while main.true:
     main.save_score(input('Enter your name:'),int(input('Enter your score:')))
-    file = open('scores.txt','w')
+    file = open('scores.txt', 'w')
     file.write("")
     file.write(main.shhhhhhhhhhh)
     file.close()
